@@ -62,7 +62,7 @@ plugins=(git npm python brew osx docker docker-compose)
 
 # User configuration
 
-export PATH="$HOME/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/android-sdk-macosx/tools:/opt/android-sdk-macosx/platform-tools"
+export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 export MANPATH="/usr/local/man:$MANPATH"
 
 source /usr/local/src/zsh-git-prompt/zshrc.sh
