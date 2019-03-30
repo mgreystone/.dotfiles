@@ -165,8 +165,6 @@ export PATH=$ANT_ROOT:$PATH
 
 eval "$(thefuck --alias)"
 
-export NPM_TOKEN=c579a476-e385-495d-baa3-f39c2d5c367c
-
 concon () {
   case "$1" in
     "prod") profile=prod ;;
