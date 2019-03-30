@@ -1,3 +1,6 @@
 [submodule ".vim"]
 	path = .vim
 	url = git@github.com:mgreystone/.vim.git
+[submodule ".oh-my-zsh/custom/themes/powerlevel9k"]
+	path = .oh-my-zsh/custom/themes/powerlevel9k
+	url = https://github.com/bhilburn/powerlevel9k.git

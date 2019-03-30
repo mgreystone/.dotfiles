@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/mgreystone/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -50,9 +50,9 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vi_mode context dir vcs)
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-export WORKON_HOME=~/.virtualenvs
+# export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+# export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+# export WORKON_HOME=~/.virtualenvs
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -95,61 +95,61 @@ export EDITOR='nvim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-eval `gdircolors /usr/local/src/dircolors-solarized/dircolors.ansi-dark`
+eval `dircolors /usr/local/src/dircolors-solarized/dircolors.ansi-dark`
 
 alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias egrep='egrep --colour=auto'
 alias fgrep='frep --colour=auto'
 alias grep='grep --colour=auto'
-alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-alias l='gls -lah --color=tty'
-alias la='gls -lAh --color=tty'
-alias ll='gls -lh --color=tty'
-alias ls='gls --color=tty'
-alias lsa='gls -lah --color=tty'
+# alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+# alias l='gls -lah --color=tty'
+# alias la='gls -lAh --color=tty'
+# alias ll='gls -lh --color=tty'
+# alias ls='gls --color=tty'
+# alias lsa='gls -lah --color=tty'
 alias vi='nvim'
-alias sed='gsed'
+# alias sed='gsed'
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-export HOMEBREW_GITHUB_API_TOKEN=6fad74e5c51510ff697aebeb1283ca200f7a6a48
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+# export HOMEBREW_GITHUB_API_TOKEN=6fad74e5c51510ff697aebeb1283ca200f7a6a48
+# export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-export NVM_DIR=~/.nvm
-export NVM_SYMLINK_CURRENT=true
+# export NVM_DIR=~/.nvm
+# export NVM_SYMLINK_CURRENT=true
 
-export MONO_GAC_PREFIX="/usr/local"
+# export MONO_GAC_PREFIX="/usr/local"
 
-source $(brew --prefix nvm)/nvm.sh
-emulate zsh -c '. $(brew --prefix nvm)/etc/bash_completion.d/nvm'
-eval $(grunt --completion=zsh)
+# source $(brew --prefix nvm)/nvm.sh
+# emulate zsh -c '. $(brew --prefix nvm)/etc/bash_completion.d/nvm'
+# eval $(grunt --completion=zsh)
 
-source $(gem path tmuxinator)/completion/tmuxinator.zsh
+# source $(gem path tmuxinator)/completion/tmuxinator.zsh
 alias mux=tmuxinator
 
 export NDK_ROOT=/opt/android-ndk-r11c
 
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/usr/local/src/cocos2d-x/tools/cocos2d-console/bin
-export PATH=$COCOS_CONSOLE_ROOT:$PATH
+# export COCOS_CONSOLE_ROOT=/usr/local/src/cocos2d-x/tools/cocos2d-console/bin
+# export PATH=$COCOS_CONSOLE_ROOT:$PATH
 
 # Add environment variable COCOS_X_ROOT for cocos2d-x
-export COCOS_X_ROOT=/usr/local/src
-export PATH=$COCOS_X_ROOT:$PATH
+# export COCOS_X_ROOT=/usr/local/src
+# export PATH=$COCOS_X_ROOT:$PATH
 
 # Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
-export COCOS_TEMPLATES_ROOT=/usr/local/src/cocos2d-x/templates
-export PATH=$COCOS_TEMPLATES_ROOT:$PATH
+# export COCOS_TEMPLATES_ROOT=/usr/local/src/cocos2d-x/templates
+# export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 
 # Add environment variable ANDROID_SDK_ROOT for cocos2d-x
-export ANDROID_SDK_ROOT=/opt/android-sdk-macosx
-export PATH=$ANDROID_SDK_ROOT:$PATH
-export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
+# export ANDROID_SDK_ROOT=/opt/android-sdk-macosx
+# export PATH=$ANDROID_SDK_ROOT:$PATH
+# export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 
 # Add environment variable ANT_ROOT for cocos2d-x
-export ANT_ROOT=/usr/local/Cellar/ant/1.9.7/bin
-export PATH=$ANT_ROOT:$PATH
+# export ANT_ROOT=/usr/local/Cellar/ant/1.9.7/bin
+# export PATH=$ANT_ROOT:$PATH
 
 ## Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
 #export COCOS_CONSOLE_ROOT=/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/tools/cocos2d-console/bin
