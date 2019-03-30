@@ -97,7 +97,7 @@ export EDITOR='nvim'
 
 eval `gdircolors /usr/local/src/dircolors-solarized/dircolors.ansi-dark`
 
-alias config='git --git-dir=/Users/mgreystone/.dotfiles/ --work-tree=/Users/mgreystone'
+alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias egrep='egrep --colour=auto'
 alias fgrep='frep --colour=auto'
 alias grep='grep --colour=auto'
