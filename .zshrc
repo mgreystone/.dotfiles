@@ -175,6 +175,8 @@ concon () {
   ssh -t $ip concon ${@:3}
 }
 
+export NPM_TOKEN=`cat ~/.npmrc | grep authToken | tr "=" "\n" | tail -n 1`
+
 export AWS_FUZZ_USER=mgreystone
 export GPG_TTY=$(tty)
 
