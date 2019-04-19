@@ -112,7 +112,6 @@ alias sed='gsed'
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-export HOMEBREW_GITHUB_API_TOKEN=6fad74e5c51510ff697aebeb1283ca200f7a6a48
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 export NVM_DIR=~/.nvm
