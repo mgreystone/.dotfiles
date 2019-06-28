@@ -110,6 +110,8 @@ alias lsa='gls -lah --color=tty'
 alias vi='nvim'
 alias sed='gsed'
 
+alias rise='art -on rise-stage docker-compose'
+
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 export HOMEBREW_GITHUB_API_TOKEN=6fad74e5c51510ff697aebeb1283ca200f7a6a48
