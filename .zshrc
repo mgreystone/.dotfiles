@@ -108,6 +108,7 @@ alias ll='gls -lh --color=tty'
 alias ls='gls --color=tty'
 alias lsa='gls -lah --color=tty'
 alias vi='nvim'
+alias vimdiff='nvim -d'
 alias sed='gsed'
 
 alias rise='art -on rise-stage docker-compose'
