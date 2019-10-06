@@ -195,4 +195,4 @@ bindkey "^[OB" down-line-or-beginning-search
 bindkey -M vicmd "k" up-line-or-beginning-search
 bindkey -M vicmd "j" down-line-or-beginning-search
 
-export LANG=en_us.UTF-8
+export LANG=en_US.UTF-8
