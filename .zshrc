@@ -108,12 +108,14 @@ alias grep='grep --colour=auto'
 # alias ls='gls --color=tty'
 # alias lsa='gls -lah --color=tty'
 alias vi='nvim'
+alias vimdiff='nvim -d'
 # alias sed='gsed'
+
+alias rise='art -on rise-stage docker-compose'
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-# export HOMEBREW_GITHUB_API_TOKEN=6fad74e5c51510ff697aebeb1283ca200f7a6a48
-# export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # export NVM_DIR=~/.nvm
 # export NVM_SYMLINK_CURRENT=true
@@ -174,6 +176,8 @@ concon () {
   echo "connecting to $ip"
   ssh -t $ip concon ${@:3}
 }
+
+export NPM_TOKEN=`cat ~/.npmrc | grep authToken | tr "=" "\n" | tail -n 1`
 
 export AWS_FUZZ_USER=mgreystone
 export GPG_TTY=$(tty)
