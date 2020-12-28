@@ -194,3 +194,6 @@ bindkey "^[OA" up-line-or-beginning-search
 bindkey "^[OB" down-line-or-beginning-search
 bindkey -M vicmd "k" up-line-or-beginning-search
 bindkey -M vicmd "j" down-line-or-beginning-search
+
+export HUSKY_SKIP_HOOKS=1
+export HUSKY_SKIP_INSTALL=1
