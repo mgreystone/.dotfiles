@@ -197,3 +197,5 @@ bindkey -M vicmd "j" down-line-or-beginning-search
 
 export HUSKY_SKIP_HOOKS=1
 export HUSKY_SKIP_INSTALL=1
+
+alias frell=fuck
