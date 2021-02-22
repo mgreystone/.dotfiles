@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 DEFAULT_USER=mgreystone
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_DELIMITER=""
@@ -65,7 +65,7 @@ plugins=(git npm python brew osx docker docker-compose)
 export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 export MANPATH="/usr/local/man:$MANPATH"
 
-source /usr/local/src/zsh-git-prompt/zshrc.sh
+source ~/.config/zsh-git-prompt/zshrc.sh
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -95,7 +95,7 @@ export EDITOR='nvim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-eval `dircolors /usr/local/src/dircolors-solarized/dircolors.ansi-dark`
+eval `dircolors ~/.config/dircolors-solarized/dircolors.ansi-dark`
 
 alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias egrep='egrep --colour=auto'
