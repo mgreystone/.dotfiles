@@ -62,7 +62,7 @@ plugins=(git npm python brew osx docker docker-compose)
 
 # User configuration
 
-export PATH="$HOME/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/android-sdk-macosx/tools:/opt/android-sdk-macosx/platform-tools"
+export PATH="$HOME:bin:$HOME/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/android-sdk-macosx/tools:/opt/android-sdk-macosx/platform-tools"
 export MANPATH="/usr/local/man:$MANPATH"
 
 source /usr/local/src/zsh-git-prompt/zshrc.sh
@@ -122,9 +122,9 @@ export NVM_SYMLINK_CURRENT=true
 
 export MONO_GAC_PREFIX="/usr/local"
 
-source $(brew --prefix nvm)/nvm.sh
-emulate zsh -c '. $(brew --prefix nvm)/etc/bash_completion.d/nvm'
-eval $(grunt --completion=zsh)
+# source $(brew --prefix nvm)/nvm.sh
+# emulate zsh -c '. $(brew --prefix nvm)/etc/bash_completion.d/nvm'
+# eval $(grunt --completion=zsh)
 
 source $(gem path tmuxinator)/completion/tmuxinator.zsh
 alias mux=tmuxinator
