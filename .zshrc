@@ -112,6 +112,7 @@ alias vimdiff='nvim -d'
 alias sed='gsed'
 
 alias rise='art -on rise-stage docker-compose'
+alias a360='art -on legacy-stage docker-compose'
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
