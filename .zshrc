@@ -115,8 +115,10 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # export HOMEBREW_GITHUB_API_TOKEN=6fad74e5c51510ff697aebeb1283ca200f7a6a48
 # export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-# export NVM_DIR=~/.nvm
-# export NVM_SYMLINK_CURRENT=true
+export NVM_DIR=~/.nvm
+export NVM_SYMLINK_CURRENT=true
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # export MONO_GAC_PREFIX="/usr/local"
 
