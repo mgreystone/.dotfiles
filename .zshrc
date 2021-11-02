@@ -127,6 +127,11 @@ export MONO_GAC_PREFIX="/usr/local"
 # emulate zsh -c '. $(brew --prefix nvm)/etc/bash_completion.d/nvm'
 # eval $(grunt --completion=zsh)
 
+if [ -d "/usr/local/opt/ruby/bin" ]; then
+  export PATH=/usr/local/opt/ruby/bin:$PATH
+  export PATH=`gem environment gemdir`/bin:$PATH
+fi
+
 source $(gem path tmuxinator)/completion/tmuxinator.zsh
 alias mux=tmuxinator
 
