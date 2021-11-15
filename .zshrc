@@ -58,7 +58,7 @@ export WORKON_HOME=~/.virtualenvs
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git npm python brew osx docker docker-compose)
+plugins=(git npm python brew macos docker docker-compose)
 
 # User configuration
 
