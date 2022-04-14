@@ -122,6 +122,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 export NVM_DIR=~/.nvm
 export NVM_SYMLINK_CURRENT=true
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 export MONO_GAC_PREFIX="/usr/local"
 
@@ -207,3 +208,4 @@ export HUSKY_SKIP_HOOKS=1
 export HUSKY_SKIP_INSTALL=1
 
 alias frell=fuck
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
