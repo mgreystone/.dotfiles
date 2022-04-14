@@ -7,3 +7,6 @@
 [submodule ".oh-my-zsh/custom/themes/powerlevel10k"]
 	path = .oh-my-zsh/custom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
+[submodule ".config/dircolors-solarized"]
+	path = .config/dircolors-solarized
+	url = https://github.com/seebi/dircolors-solarized.git
