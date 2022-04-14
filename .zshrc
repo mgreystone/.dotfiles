@@ -1,6 +1,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/mgreystone/.oh-my-zsh
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -62,7 +64,6 @@ plugins=(git npm python brew macos docker docker-compose)
 
 # User configuration
 
-export PATH="$HOME:bin:$HOME/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/android-sdk-macosx/tools:/opt/android-sdk-macosx/platform-tools"
 export MANPATH="/usr/local/man:$MANPATH"
 
 source /usr/local/src/zsh-git-prompt/zshrc.sh
