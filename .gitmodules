@@ -1,3 +1,9 @@
 [submodule ".vim"]
 	path = .vim
 	url = git@github.com:mgreystone/.vim.git
+[submodule ".config/zsh-git-prompt"]
+	path = .config/zsh-git-prompt
+	url = https://github.com/olivierverdier/zsh-git-prompt.git
+[submodule ".oh-my-zsh/custom/themes/powerlevel10k"]
+	path = .oh-my-zsh/custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git

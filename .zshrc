@@ -7,7 +7,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 DEFAULT_USER=mgreystone
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_DELIMITER=""
@@ -66,7 +66,7 @@ plugins=(git npm python brew macos docker docker-compose)
 
 export MANPATH="/usr/local/man:$MANPATH"
 
-source /usr/local/src/zsh-git-prompt/zshrc.sh
+source ~/.config/zsh-git-prompt/zshrc.sh
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
