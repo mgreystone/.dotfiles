@@ -96,7 +96,7 @@ export EDITOR='nvim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-eval `gdircolors .config/dircolors-solarized/dircolors.ansi-dark`
+eval `gdircolors ~/.config/dircolors-solarized/dircolors.ansi-dark`
 
 alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias egrep='egrep --colour=auto'
