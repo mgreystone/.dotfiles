@@ -112,7 +112,8 @@ alias vimdiff='nvim -d'
 alias sed='gsed'
 
 alias rise='art -on rise-stage docker-compose'
-alias a360='art -on legacy-stage docker-compose'
+alias a360='art -on 360-stage docker-compose'
+alias legacy='art -on legacy-stage docker-compose'
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
@@ -132,8 +133,8 @@ if [ -d "/usr/local/opt/ruby/bin" ]; then
   export PATH=`gem environment gemdir`/bin:$PATH
 fi
 
-source $(gem path tmuxinator)/completion/tmuxinator.zsh
-alias mux=tmuxinator
+# source $(gem path tmuxinator)/completion/tmuxinator.zsh
+# alias mux=tmuxinator
 
 export NDK_ROOT=/opt/android-ndk-r11c
 
