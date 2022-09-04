@@ -1,11 +1,13 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 DEFAULT_USER=mgreystone
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_DELIMITER=""
@@ -58,14 +60,14 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vi_mode context dir vcs)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git npm python brew osx docker docker-compose)
+plugins=(git npm python brew macos docker docker-compose)
 
 # User configuration
 
 export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 export MANPATH="/usr/local/man:$MANPATH"
 
-source /usr/local/src/zsh-git-prompt/zshrc.sh
+source ~/.config/zsh-git-prompt/zshrc.sh
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -95,7 +97,7 @@ export EDITOR='nvim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-eval `dircolors /usr/local/src/dircolors-solarized/dircolors.ansi-dark`
+eval `dircolors ~/.config/dircolors-solarized/dircolors.ansi-dark`
 
 alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias egrep='egrep --colour=auto'
@@ -112,6 +114,8 @@ alias vimdiff='nvim -d'
 # alias sed='gsed'
 
 alias rise='art -on rise-stage docker-compose'
+alias a360='art -on 360-stage docker-compose'
+alias legacy='art -on legacy-stage docker-compose'
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
@@ -120,14 +124,16 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # export NVM_DIR=~/.nvm
 # export NVM_SYMLINK_CURRENT=true
 
-# export MONO_GAC_PREFIX="/usr/local"
-
-# source $(brew --prefix nvm)/nvm.sh
-# emulate zsh -c '. $(brew --prefix nvm)/etc/bash_completion.d/nvm'
-# eval $(grunt --completion=zsh)
-
 # source $(gem path tmuxinator)/completion/tmuxinator.zsh
 alias mux=tmuxinator
+
+if [ -d "/usr/local/opt/ruby/bin" ]; then
+  export PATH=/usr/local/opt/ruby/bin:$PATH
+  export PATH=`gem environment gemdir`/bin:$PATH
+fi
+
+# source $(gem path tmuxinator)/completion/tmuxinator.zsh
+# alias mux=tmuxinator
 
 export NDK_ROOT=/opt/android-ndk-r11c
 
@@ -196,3 +202,10 @@ bindkey -M vicmd "k" up-line-or-beginning-search
 bindkey -M vicmd "j" down-line-or-beginning-search
 
 export LANG=en_US.UTF-8
+export HUSKY_SKIP_HOOKS=1
+export HUSKY_SKIP_INSTALL=1
+
+alias frell=fuck
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH=~/bin:$PATH
