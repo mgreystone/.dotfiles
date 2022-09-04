@@ -3,6 +3,8 @@ export ZSH=$HOME/.oh-my-zsh
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -123,14 +125,14 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # export NVM_DIR=~/.nvm
 # export NVM_SYMLINK_CURRENT=true
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # source $(gem path tmuxinator)/completion/tmuxinator.zsh
 alias mux=tmuxinator
 
-if [ -d "/usr/local/opt/ruby/bin" ]; then
-  export PATH=/usr/local/opt/ruby/bin:$PATH
-  export PATH=`gem environment gemdir`/bin:$PATH
-fi
+# source $(brew --prefix nvm)/nvm.sh
+# emulate zsh -c '. $(brew --prefix nvm)/etc/bash_completion.d/nvm'
+# eval $(grunt --completion=zsh)
 
 # source $(gem path tmuxinator)/completion/tmuxinator.zsh
 # alias mux=tmuxinator
