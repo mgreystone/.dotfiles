@@ -186,7 +186,8 @@ concon () {
   ssh -t $ip concon ${@:3}
 }
 
-export NPM_TOKEN=`cat ~/.npmrc | grep authToken | tr "=" "\n" | tail -n 1`
+export NPM_TOKEN=`cat ~/.npmrc | grep //registry.npmjs.org/:_authToken | tr "=" "\n" | tail -n 1`
+export FONT_AWESOME_NPM_AUTH_TOKEN=`cat ~/.npmrc | grep //npm.fontawesome.com/:_authToken | tr "=" "\n" | tail -n 1`
 
 export AWS_FUZZ_USER=mgreystone
 export GPG_TTY=$(tty)
@@ -204,10 +205,16 @@ bindkey "^[OB" down-line-or-beginning-search
 bindkey -M vicmd "k" up-line-or-beginning-search
 bindkey -M vicmd "j" down-line-or-beginning-search
 
-export HUSKY_SKIP_HOOKS=1
-export HUSKY_SKIP_INSTALL=1
+# export HUSKY_SKIP_HOOKS=1
+# export HUSKY_SKIP_INSTALL=1
 
 alias frell=fuck
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH=~/bin:$PATH
+
+# pnpm
+export PNPM_HOME="/Users/mgreystone/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+#
