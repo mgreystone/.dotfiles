@@ -123,9 +123,9 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-# export NVM_DIR=~/.nvm
-# export NVM_SYMLINK_CURRENT=true
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+export NVM_DIR=~/.nvm
+export NVM_SYMLINK_CURRENT=true
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # source $(gem path tmuxinator)/completion/tmuxinator.zsh
 alias mux=tmuxinator
@@ -211,3 +211,4 @@ alias frell=fuck
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH=~/bin:$PATH
+export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
