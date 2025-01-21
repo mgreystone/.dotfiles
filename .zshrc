@@ -211,7 +211,7 @@ bindkey -M vicmd "j" down-line-or-beginning-search
 alias frell=fuck
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH=~/bin:$PATH
+export PATH=~/bin:~/.local/bin:$PATH
 
 # pnpm
 export PNPM_HOME="/Users/mgreystone/Library/pnpm"
