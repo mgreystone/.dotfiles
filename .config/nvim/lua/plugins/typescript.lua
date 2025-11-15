@@ -7,14 +7,11 @@ return {
           settings = {
             typescript = {
               inlayHints = {
-                includeInlayParameterNameHints = "none",
-                includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-                includeInlayVariableTypeHints = false,
-                includeInlayFunctionParameterTypeHints = false,
-                includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-                includeInlayPropertyDeclarationTypeHints = false,
-                includeInlayFunctionLikeReturnTypeHints = false,
-                includeInlayEnumMemberValueHints = false,
+                functionLikeReturnTypes = { enabled = false },
+                parameterNames = { enabled = "none" },
+                propertyDeclarationTypes = { enabled = false },
+                variableTypes = { enabled = false },
+                enumMemberValues = { enabled = false },
               },
             },
           },
