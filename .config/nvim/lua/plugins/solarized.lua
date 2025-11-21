@@ -3,7 +3,18 @@ return {
   lazy = false,
   priority = 1000,
   ---@type solarized.config
-  opts = {},
+  opts = {
+    styles = {
+      types = { italic = false },
+      functions = { italic = false },
+      parameters = { italic = false },
+      comments = { italic = false },
+      strings = { italic = false },
+      keywords = { italic = false },
+      variables = { italic = false },
+      constants = { italic = false },
+    },
+  },
   config = function(_, opts)
     vim.o.termguicolors = true
     vim.o.background = "dark"
