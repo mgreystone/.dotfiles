@@ -66,7 +66,7 @@ plugins=(git npm python brew macos docker docker-compose)
 
 # User configuration
 
-export PATH="$HOME/bin:/opt/nvim-linux64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+export PATH="$HOME/bin:/opt/nvim-linux-x86_64/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 export MANPATH="/usr/local/man:$MANPATH"
 
 source ~/.config/zsh-git-prompt/zshrc.sh
@@ -115,9 +115,9 @@ alias vi='nvim'
 alias vimdiff='nvim -d'
 # alias sed='gsed'
 
-alias rise='art -on rise-stage docker-compose'
-alias a360='art -on 360-stage docker-compose'
-alias legacy='art -on legacy-stage docker-compose'
+alias rise='art --on rise-stage dev --'
+alias a360='art --on 360-stage dev --'
+alias legacy='art --on legacy-stage dev --'
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
@@ -185,7 +185,8 @@ concon () {
   ssh -t $ip concon ${@:3}
 }
 
-export NPM_TOKEN=`cat ~/.npmrc | grep authToken | tr "=" "\n" | tail -n 1`
+export NPM_TOKEN=`cat ~/.npmrc | grep //registry.npmjs.org/:_authToken | tr "=" "\n" | tail -n 1`
+export FONT_AWESOME_NPM_AUTH_TOKEN=`cat ~/.npmrc | grep //npm.fontawesome.com/:_authToken | tr "=" "\n" | tail -n 1`
 
 export AWS_FUZZ_USER=mgreystone
 export GPG_TTY=$(tty)
@@ -204,8 +205,8 @@ bindkey -M vicmd "k" up-line-or-beginning-search
 bindkey -M vicmd "j" down-line-or-beginning-search
 
 export LANG=en_US.UTF-8
-export HUSKY_SKIP_HOOKS=1
-export HUSKY_SKIP_INSTALL=1
+# export HUSKY_SKIP_HOOKS=1
+# export HUSKY_SKIP_INSTALL=1
 
 alias frell=fuck
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
