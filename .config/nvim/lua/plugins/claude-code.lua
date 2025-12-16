@@ -3,10 +3,13 @@ return {
     "coder/claudecode.nvim",
     dependencies = { "folke/snacks.nvim" },
     lazy = false,
-    priority = 1000,
+    priority = 900,
     config = true,
     opts = {
-      terminal_cmd = "art claude --native --",
+      terminal_cmd = "art claude --native -- --ide",
+      diff_opts = {
+        open_in_current_tab = false,
+      },
     },
     keys = {
       { "<leader>a", nil, desc = "AI/Claude Code" },

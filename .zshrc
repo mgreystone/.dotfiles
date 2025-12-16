@@ -216,5 +216,10 @@ export PATH=~/bin:~/.local/bin:$PATH
 # pnpm
 export PNPM_HOME="/Users/mgreystone/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
+eval "$(pnpm completion zsh)"
 # pnpm end
-#
+
+# alias nvim=/opt/nvim-macos-arm64/bin/nvim
+# export GIT_EDITOR=/opt/nvim-macos-arm64/bin/nvim
+
+export ART_COMPOSE_WHARF=true
