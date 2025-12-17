@@ -4,6 +4,19 @@
 
 vim.keymap.set("i", "jk", "<ESC>", { silent = true })
 
-vim.keymap.set("n", "<C-P>", function()
-  require("fzf-lua").files()
-end)
+-- Map visual-mode capital S to "gsa" (mini.surround add)
+vim.keymap.set("x", "S", "gsa", { remap = true, desc = "Surround selection (vim-surround style)" })
+
+vim.keymap.set("n", "<F1>", function()
+  Snacks.explorer()
+end, { desc = "Explorer (Snacks)" })
+
+vim.keymap.set("n", "<C-p>", function()
+  Snacks.picker.files({
+    layout = { preset = "ivy" },
+  })
+end, { desc = "Explorer (Snacks)" })
+
+vim.keymap.set("n", "gl", function()
+  vim.diagnostic.open_float(nil, { focus = false })
+end, { desc = "Line diagnostics" })
