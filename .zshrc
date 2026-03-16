@@ -223,3 +223,4 @@ eval "$(pnpm completion zsh)"
 # export GIT_EDITOR=/opt/nvim-macos-arm64/bin/nvim
 
 export ART_COMPOSE_WHARF=true
+export ENABLE_LSP_TOOL=1
