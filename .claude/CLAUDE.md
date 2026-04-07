@@ -1,3 +1,7 @@
+## Code Changes
+
+Never suggest, propose, or make edits or changes to code or files unless the user explicitly asks. When analyzing code or explaining errors, stop at explanation only. Wait for an explicit instruction before using any Edit or Write tools.
+
 ## Documentation First
 
 When the user requests code examples, setup or configuration steps, or library/API documentation, first check the docs with context7
