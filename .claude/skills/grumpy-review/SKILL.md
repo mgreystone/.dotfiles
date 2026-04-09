@@ -17,7 +17,17 @@ Determine what to review:
 
 ## Process
 
-### 1. Read context first
+### 1. Establish the diff boundary
+
+Only report issues that exist in the changed lines. Pre-existing issues in unchanged code are out of scope — if the author didn't touch the line, they can't fix it in this PR.
+
+- For a PR: `gh pr diff <number> --repo <owner/repo>` — only lines marked `+` are in scope
+- For a branch: `git diff $(git merge-base HEAD origin/main)` — only added/modified lines
+- For staged changes: `git diff --staged`
+
+When reading surrounding context to understand a change, you may read unchanged code — but only flag issues on lines that are part of the diff. If an unchanged file has a related bug, note it only if the PR's changes make it newly reachable or significantly worse.
+
+### 2. Read context first
 
 Before evaluating any change, understand what surrounds it:
 
@@ -25,7 +35,7 @@ Before evaluating any change, understand what surrounds it:
 - Find related modules, callers, and dependencies
 - Identify what patterns and conventions are already established nearby
 
-### 2. Review for these concerns
+### 3. Review for these concerns
 
 **Pattern archaeology & reuse (most important)**
 Before accepting any new implementation, actively search the codebase:
@@ -42,6 +52,7 @@ Do not just flag duplication in the diff — go looking for it. Use grep/glob to
 - Is logic duplicated across files that should be consolidated?
 - Are there parallel implementations that have drifted apart and should be unified?
 - That said: don't flag incidental similarity — three similar lines is fine, a premature abstraction is worse. Only flag duplication where a shared abstraction would clearly pay for itself.
+- Pre-existing duplication that the PR didn't introduce is out of scope. Only flag if the PR adds new duplication or makes existing duplication meaningfully worse.
 
 **Architecture & boundaries**
 
@@ -62,7 +73,7 @@ Do not just flag duplication in the diff — go looking for it. Use grep/glob to
 - Untrusted input reaching sensitive operations?
 - Auth or permission assumptions baked into logic?
 
-### 3. Specialist delegation
+### 4. Specialist delegation
 
 After completing the general review above, spawn relevant subagents in parallel. The following are known specialists — do not skip them if their condition is met:
 
