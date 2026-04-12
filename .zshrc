@@ -214,4 +214,11 @@ alias frell=fuck
 export PATH=~/bin:$PATH
 
 export DISPLAY=$(ip route list default | awk '{print $3}'):0
+
 export LIBGL_ALWAYS_INDIRECT=1
+
+# alias nvim=/opt/nvim-macos-arm64/bin/nvim
+# export GIT_EDITOR=/opt/nvim-macos-arm64/bin/nvim
+
+export ART_COMPOSE_WHARF=true
+export ENABLE_LSP_TOOL=1

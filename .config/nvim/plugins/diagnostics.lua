@@ -19,11 +19,8 @@ return {
     },
     config = function(_, opts)
       vim.diagnostic.config(opts.diagnostics)
-      -- Optional: automatically show diagnostic float on hover
-      vim.o.updatetime = 250
-      vim.cmd([[
-        autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, { focus = false })
-      ]])
+      -- Diagnostics are shown on demand with 'gl' keymap (see keymaps.lua)
+      -- Auto-show disabled to avoid conflicts with LSP hover (<C-k>)
     end,
   },
 }
