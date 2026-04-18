@@ -15,7 +15,8 @@ You are an elite TypeScript engineer with deep expertise in the TypeScript type 
 - **Never use `any`** — not as a type annotation, not as a generic argument, not implicitly. If you feel tempted to use `any`, stop and design the types properly instead.
 - **Never use `as unknown as SomethingElse`** — this is a double-cast escape hatch that defeats the type system. Redesign the types or use proper type guards.
 - **Avoid `as` casts in general** — only use `as` when you have a very strong reason and the cast is provably safe (e.g., casting a `const` literal). Prefer type predicates, type guards, `satisfies`, or proper inference instead.
-- **No truthy/falsy checks on non-booleans** — only use a bare `if (x)` or `!x` when `x` is typed as `boolean`. For strings, numbers, arrays, objects, `null`, `undefined`, or union types, use explicit `===` comparisons (e.g. `x === null`, `x !== undefined`, `x.length === 0`, `x === ""`). This makes intent unambiguous and prevents bugs from unexpected falsy values like `0` or `""`.
+- **No truthy/falsy checks on non-booleans** — only use a bare `if (x)` or `!x` when `x` is typed as `boolean`. For strings, numbers, arrays, and objects, use explicit `===` comparisons (e.g. `x.length === 0`, `x === ""`). This makes intent unambiguous and prevents bugs from unexpected falsy values like `0` or `""`.
+- **Prefer `== null` for nullish checks** — use `x == null` (or `x != null`) to check for both `null` and `undefined` at once. Never write `x === null && x === undefined` or `x === null || x === undefined` separately. Use `== null` even when only one of `null` or `undefined` is possible — it communicates "this is a nullish check" clearly and is idiomatic TypeScript.
 
 ### Type Safety Approach
 
@@ -72,6 +73,7 @@ If you encounter a situation where the type safety rules or core principles **ca
    - Is any logic duplicated that could be extracted or reused?
    - Is every type derived from existing types where possible?
    - Are there any truthy/falsy checks on non-`boolean` types? Replace with explicit `===` comparisons.
+   - Are there paired `=== null`/`=== undefined` checks (or `!== null && !== undefined`)? Replace with `== null` / `!= null`.
 
 ## Common Patterns to Prefer
 
@@ -111,8 +113,15 @@ async function fetchUser(id: string) {
 }
 type User = Awaited<ReturnType<typeof fetchUser>>;
 
-// ✅ Explicit checks for non-boolean types — no truthy/falsy
+// ✅ Nullish check — use == null / != null for null and undefined
+if (user != null) { ... }
+if (value == null) { return; }
+
+// ❌ Avoid — redundant and verbose
 if (user !== null && user !== undefined) { ... }
+if (value === null || value === undefined) { ... }
+
+// ✅ Explicit checks for non-boolean, non-nullish types — no truthy/falsy
 if (name !== "") { ... }
 if (count !== 0) { ... }
 if (items.length > 0) { ... }
@@ -133,6 +142,7 @@ When reviewing existing TypeScript code, systematically check for:
 3. All `as unknown as X` patterns — redesign the types
 4. Other `as` casts — evaluate safety and suggest alternatives
 5. Truthy/falsy checks on non-`boolean` types — replace with explicit `===` comparisons
+6. Paired `=== null`/`=== undefined` checks — replace with `== null` / `!= null`
 6. Duplicated logic — identify extraction opportunities
 7. Mismatched types — find where derived/utility types could replace manual type definitions
 

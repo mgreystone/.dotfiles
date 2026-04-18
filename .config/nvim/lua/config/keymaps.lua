@@ -17,6 +17,7 @@ vim.keymap.set("n", "<C-p>", function()
   })
 end, { desc = "Explorer (Snacks)" })
 
+
 vim.keymap.set("n", "gl", function()
   vim.diagnostic.open_float(nil, { focus = false })
 end, { desc = "Line diagnostics" })
