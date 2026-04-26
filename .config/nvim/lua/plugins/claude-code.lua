@@ -6,7 +6,7 @@ return {
     priority = 900,
     config = true,
     opts = {
-      terminal_cmd = "op run --no-masking -- art claude --native -- --ide",
+      terminal_cmd = "op run --no-masking -- art claude -- --ide",
       diff_opts = {
         open_in_current_tab = false,
       },

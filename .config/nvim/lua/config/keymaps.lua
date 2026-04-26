@@ -17,7 +17,17 @@ vim.keymap.set("n", "<C-p>", function()
   })
 end, { desc = "Explorer (Snacks)" })
 
-
 vim.keymap.set("n", "gl", function()
   vim.diagnostic.open_float(nil, { focus = false })
 end, { desc = "Line diagnostics" })
+
+-- Terminal: make it feel like normal Vim windows
+vim.keymap.set("t", "jk", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
+vim.keymap.set("t", "<C-[>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
+
+vim.keymap.set("t", "<C-w>h", [[<C-\><C-n><C-w>h]], { desc = "Terminal left window" })
+vim.keymap.set("t", "<C-w>j", [[<C-\><C-n><C-w>j]], { desc = "Terminal lower window" })
+vim.keymap.set("t", "<C-w>k", [[<C-\><C-n><C-w>k]], { desc = "Terminal upper window" })
+vim.keymap.set("t", "<C-w>l", [[<C-\><C-n><C-w>l]], { desc = "Terminal right window" })
+vim.keymap.set("t", "<C-w>w", [[<C-\><C-n><C-w>w]], { desc = "Terminal next window" })
+vim.keymap.set("t", "<C-w>q", [[<C-\><C-n><C-w>q]], { desc = "Terminal close window" })
