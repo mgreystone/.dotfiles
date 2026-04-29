@@ -13,6 +13,7 @@ These rules may not be violated by Claude under any circumstances. If one cannot
 - **No `enum` declarations** — use `const` objects with `as const` instead.
 - **No implicit truthiness on non-booleans** — only use bare `if (x)` or `!x` when `x` is typed as `boolean`. This applies even when `x` is a union type like `string | undefined` or `T | null` — use explicit comparisons (`x != null`, `x !== ""`, `x.length === 0`) so intent is unambiguous. There are no exceptions.
 - **Use `== null` / `!= null` for nullish checks** — checks for both `null` and `undefined` at once. Never write paired `=== null || === undefined` checks.
+- **Never add suppression directives** — `eslint-disable` (any form), `// @ts-ignore`, and `// @ts-expect-error` are prohibited. Fix the root cause or stop and explain.
 
 ## Type Safety
 
@@ -41,6 +42,7 @@ Before writing a custom utility type, check if [`type-fest`](https://github.com/
 - **Keep functions small and focused** — one responsibility per function.
 - **Prefer explicit over implicit** in type signatures for public APIs, even if TypeScript can infer them.
 - **Avoid clever one-liners** that sacrifice readability for brevity.
+- **JSDoc is encouraged** for public APIs and complex generics. Inline comments must be a single line, added only when the why cannot be inferred from the code.
 
 ## Requesting a Human Exception
 
@@ -63,6 +65,7 @@ Before responding, check:
 - [ ] Any paired `=== null`/`=== undefined`? Replace with `== null` / `!= null`.
 - [ ] Any duplicated logic? Extract it.
 - [ ] Any type duplicated from an existing definition? Derive it instead.
+- [ ] Any `eslint-disable`, `@ts-ignore`, or `@ts-expect-error`? Remove them.
 - [ ] Any inferred types assumed without verification? Use LSP hover to confirm.
 - [ ] Any codebase-specific patterns, utilities, or conventions discovered? Save to memory.
 
