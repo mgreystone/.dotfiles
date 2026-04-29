@@ -25,20 +25,25 @@ vim.api.nvim_create_autocmd("WinEnter", {
   end,
 })
 
--- Dim entire nvim instance when tmux focus moves to another pane
+-- Dim entire nvim instance when tmux focus moves to another pane.
+-- We change the global highlight groups directly rather than per-window
+-- winhighlight, because snacks floating windows reset winhighlight after we set it.
+local active_bg   = "#001c24"
+local inactive_bg = "#002b36"
+
+local function set_instance_dim(dimmed)
+  local bg = dimmed and inactive_bg or active_bg
+  vim.api.nvim_set_hl(0, "Normal",       { bg = bg })
+  vim.api.nvim_set_hl(0, "NormalFloat",  { bg = bg })
+  vim.api.nvim_set_hl(0, "SnacksNormal", { bg = bg })
+end
+
 vim.api.nvim_create_autocmd("FocusLost", {
   group = dim,
-  callback = function()
-    for _, win in ipairs(vim.api.nvim_list_wins()) do
-      vim.wo[win].winhighlight = "Normal:NormalNC"
-    end
-  end,
+  callback = function() set_instance_dim(true) end,
 })
 
 vim.api.nvim_create_autocmd("FocusGained", {
   group = dim,
-  callback = function()
-    -- Restore only the active window; others stay dim via WinLeave
-    vim.wo.winhighlight = ""
-  end,
+  callback = function() set_instance_dim(false) end,
 })
