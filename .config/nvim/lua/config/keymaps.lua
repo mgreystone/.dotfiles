@@ -21,6 +21,11 @@ vim.keymap.set("n", "gl", function()
   vim.diagnostic.open_float(nil, { focus = false })
 end, { desc = "Line diagnostics" })
 
+-- Restore LazyVim <leader>c bindings overwritten by sivchari/claude-code.nvim
+vim.keymap.set("n", "<leader>cl", function() Snacks.picker.lsp_config() end, { desc = "Lsp Info" })
+vim.keymap.set({ "n", "x" }, "<leader>cc", vim.lsp.codelens.run, { desc = "Run Codelens" })
+vim.keymap.set("n", "<leader>cm", "<cmd>Mason<cr>", { desc = "Mason" })
+
 -- Terminal: make it feel like normal Vim windows
 vim.keymap.set("t", "jk", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 vim.keymap.set("t", "<C-[>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })

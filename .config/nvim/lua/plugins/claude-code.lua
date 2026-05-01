@@ -1,5 +1,26 @@
 return {
   {
+    "sivchari/claude-code.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim" },
+    lazy = false,
+    opts = {
+      mappings = { toggle = false },
+      width = 0.5,
+      height = 1,
+      position = "right",
+      auto_scroll = true,
+      start_in_insert = true,
+    },
+    keys = {
+      { "<leader>aw", group = "Worktrees" },
+      { "<leader>awc", "<cmd>ClaudeWorktreeCreate<cr>", desc = "Create worktree" },
+      { "<leader>aws", "<cmd>ClaudeWorktreeSwitch<cr>", desc = "Switch worktree" },
+      { "<leader>awr", "<cmd>ClaudeWorktreeRemove<cr>", desc = "Remove worktree" },
+      { "<leader>awl", "<cmd>ClaudeSessions<cr>",       desc = "List sessions" },
+      { "<leader>awm", "<cmd>ClaudeMonitor<cr>",        desc = "Toggle session monitor" },
+    },
+  },
+  {
     "coder/claudecode.nvim",
     dependencies = { "folke/snacks.nvim" },
     lazy = false,
