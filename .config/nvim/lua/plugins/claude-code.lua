@@ -16,8 +16,8 @@ return {
       { "<leader>awc", "<cmd>ClaudeWorktreeCreate<cr>", desc = "Create worktree" },
       { "<leader>aws", "<cmd>ClaudeWorktreeSwitch<cr>", desc = "Switch worktree" },
       { "<leader>awr", "<cmd>ClaudeWorktreeRemove<cr>", desc = "Remove worktree" },
-      { "<leader>awl", "<cmd>ClaudeSessions<cr>",       desc = "List sessions" },
-      { "<leader>awm", "<cmd>ClaudeMonitor<cr>",        desc = "Toggle session monitor" },
+      { "<leader>awl", "<cmd>ClaudeSessions<cr>", desc = "List sessions" },
+      { "<leader>awm", "<cmd>ClaudeMonitor<cr>", desc = "Toggle session monitor" },
     },
   },
   {
@@ -27,7 +27,7 @@ return {
     priority = 900,
     config = true,
     opts = {
-      terminal_cmd = "op run --no-masking -- art claude -- --ide",
+      terminal_cmd = "~/bin/_claude",
       diff_opts = {
         open_in_current_tab = false,
       },

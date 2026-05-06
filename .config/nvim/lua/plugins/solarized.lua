@@ -20,6 +20,9 @@ return {
     vim.o.background = "dark"
     require("solarized").setup(opts)
     vim.cmd.colorscheme("solarized")
+    for i = 0, 15 do
+      vim.g["terminal_color_" .. i] = nil
+    end
     -- Match tmux inactive pane color so unfocused nvim windows dim consistently
     vim.api.nvim_set_hl(0, "Normal",        { bg = "#001c24" })
     vim.api.nvim_set_hl(0, "NormalNC",      { bg = "#002b36" })
