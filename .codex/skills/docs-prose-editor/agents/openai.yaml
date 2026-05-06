@@ -1,4 +1,0 @@
-interface:
-  display_name: "Docs Prose Editor"
-  short_description: "Improve developer documentation"
-  default_prompt: "Use $docs-prose-editor to revise this markdown documentation for clarity."

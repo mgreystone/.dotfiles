@@ -1,4 +1,0 @@
-interface:
-  display_name: "Writing PRs"
-  short_description: "Draft and create PRs interactively"
-  default_prompt: "Use $writing-prs to draft an interactive pull request for my current branch."

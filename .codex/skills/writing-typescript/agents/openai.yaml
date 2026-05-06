@@ -1,4 +1,0 @@
-interface:
-  display_name: "Writing TypeScript"
-  short_description: "Apply strict TypeScript rules"
-  default_prompt: "Use $writing-typescript to implement this TypeScript change with strict type safety."
