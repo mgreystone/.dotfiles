@@ -1,0 +1,4 @@
+interface:
+  display_name: "E-Learning Expert"
+  short_description: "Advise on LMS standards work"
+  default_prompt: "Use $elearning-expert to reason through this SCORM or LMS integration question."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Writing Commits"
+  short_description: "Draft Conventional Commit messages"
+  default_prompt: "Use $writing-commits to draft a commit message for my staged changes."

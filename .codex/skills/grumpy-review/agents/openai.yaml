@@ -1,0 +1,4 @@
+interface:
+  display_name: "Grumpy Review"
+  short_description: "Run a skeptical code review"
+  default_prompt: "Use $grumpy-review to review the current branch diff skeptically."

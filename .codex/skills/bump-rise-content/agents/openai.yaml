@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bump Rise Content"
+  short_description: "Upgrade Rise Content dependencies"
+  default_prompt: "Use $bump-rise-content to upgrade Rise Content dependencies to the requested version."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Init TypeScript Project"
+  short_description: "Scaffold TypeScript projects with pnpm checks"
+  default_prompt: "Use $init-typescript-project to initialize a new TypeScript project."
