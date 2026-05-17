@@ -224,3 +224,14 @@ eval "$(pnpm completion zsh)"
 
 export ART_COMPOSE_WHARF=true
 export ENABLE_LSP_TOOL=1
+
+# source "$HOME/.secrets.zsh"
+
+alias claude="$HOME/bin/_claude"
+alias codex="$HOME/bin/_codex"
+
+alias wm=workmux
+eval "$(workmux completions zsh)"
+
+export DO_NOT_TRACK=true
+export GH_TELEMETRY=false

@@ -1,0 +1,10 @@
+status_format: false
+nerdfont: true
+merge_strategy: rebase
+agent: codex
+
+panes:
+  - command: nvim
+  - command: <agent>
+    split: vertical
+    focus: true
