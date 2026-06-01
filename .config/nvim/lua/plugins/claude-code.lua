@@ -1,6 +1,7 @@
 return {
   {
     "sivchari/claude-code.nvim",
+    enabled = false,
     dependencies = { "nvim-telescope/telescope.nvim" },
     lazy = false,
     opts = {
@@ -22,6 +23,7 @@ return {
   },
   {
     "coder/claudecode.nvim",
+    enabled = false,
     dependencies = { "folke/snacks.nvim" },
     lazy = false,
     priority = 900,

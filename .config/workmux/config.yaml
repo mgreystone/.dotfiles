@@ -1,10 +1,27 @@
 status_format: false
 nerdfont: true
 merge_strategy: rebase
-agent: codex
 
 panes:
-  - command: nvim
+  - command: nvim -c "DiffviewOpen -w"
   - command: <agent>
-    split: vertical
     focus: true
+    split: horizontal
+    size: 139
+
+sidebar:
+  templates:
+    # Compact mode: a single line per agent.
+    compact: "{status_icon} {primary} {pane_suffix} {fill} {elapsed}"
+
+    # Tile mode: one string per visual line in the tile body.
+    tiles:
+      - "{primary} {pane_suffix} {fill} {elapsed}"
+      - "{secondary} {pr_number} {fill} {git_ahead} {git_behind} {git_conflict} {git_stats}"
+      - "{pane_title}"
+
+    # Horizontal mode: one string per visual line in each top bar chip.
+    horizontal:
+      - "{status_icon} {primary} {pane_suffix} {fill} {elapsed}"
+      - "{secondary} {fill} {git_stats}"
+      - "{pane_title}"

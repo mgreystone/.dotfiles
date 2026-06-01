@@ -235,3 +235,4 @@ eval "$(workmux completions zsh)"
 
 export DO_NOT_TRACK=true
 export GH_TELEMETRY=false
+source /Users/mgreystone/.config/op/plugins.sh
