@@ -3,7 +3,7 @@ nerdfont: true
 merge_strategy: rebase
 
 panes:
-  - command: nvim -c "DiffviewOpen -w"
+  - command: nvim -c "DiffviewOpen -w origin/main"
   - command: <agent>
     focus: true
     split: horizontal
