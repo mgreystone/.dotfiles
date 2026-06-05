@@ -38,12 +38,20 @@ local function set_instance_dim(dimmed)
   vim.api.nvim_set_hl(0, "SnacksNormal", { bg = bg })
 end
 
+vim.g.nvim_focused = true
+
 vim.api.nvim_create_autocmd("FocusLost", {
   group = dim,
-  callback = function() set_instance_dim(true) end,
+  callback = function()
+    vim.g.nvim_focused = false
+    set_instance_dim(true)
+  end,
 })
 
 vim.api.nvim_create_autocmd("FocusGained", {
   group = dim,
-  callback = function() set_instance_dim(false) end,
+  callback = function()
+    vim.g.nvim_focused = true
+    set_instance_dim(false)
+  end,
 })

@@ -6,6 +6,9 @@ return {
         vtsls = {
           settings = {
             typescript = {
+              tsserver = {
+                maxTsServerMemory = 8192, -- MB; default 3072 OOMs on this monorepo
+              },
               inlayHints = {
                 enumMemberValues = { enabled = false },
                 functionLikeReturnTypes = { enabled = false },
