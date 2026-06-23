@@ -8,3 +8,5 @@ alias lsa='ls -lah --color=auto'
 
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
+
+export SSH_AUTH_SOCK=~/.1password/agent.sock

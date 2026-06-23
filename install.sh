@@ -2,7 +2,7 @@
 set -euo pipefail
 
 DOTFILES="$(cd "$(dirname "$0")" && pwd)"
-SHARED=(zsh tmux nvim ghostty workmux vim agents claude codex)
+SHARED=(zsh tmux nvim ghostty kitty workmux vim agents claude codex)
 
 case "$(uname -s)" in
   Darwin) OS_PACKAGES=(zsh-macos) ;;
