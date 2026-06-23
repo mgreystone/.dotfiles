@@ -1,0 +1,47 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+export WORKON_HOME=~/.virtualenvs
+
+eval `gdircolors ~/.config/dircolors-solarized/dircolors.ansi-dark`
+eval "$(thefuck --alias)"
+alias frell=fuck
+
+alias l='gls -lah --color=tty'
+alias la='gls -lAh --color=tty'
+alias ll='gls -lh --color=tty'
+alias ls='gls --color=tty'
+alias lsa='gls -lah --color=tty'
+alias sed='gsed'
+alias subl='/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'
+
+alias rise='art --on rise-stage dev --'
+alias a360='art --on 360-stage dev --'
+alias legacy='art --on legacy-stage dev --'
+
+if [ -d "/usr/local/opt/ruby/bin" ]; then
+  export PATH=/usr/local/opt/ruby/bin:$PATH
+  export PATH=$(gem environment gemdir)/bin:$PATH
+fi
+
+export PNPM_HOME="$HOME/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+eval "$(pnpm completion zsh)"
+
+[[ -f "$HOME/.config/op/plugins.sh" ]] && source "$HOME/.config/op/plugins.sh"
+
+concon () {
+  case "$1" in
+    "prod") profile=prod ;;
+    "stage") profile=default ;;
+  esac
+  ip=$(aws ec2 --profile $profile describe-instances \
+    --filters "Name=tag:App,Values=$2" "Name=instance-state-name,Values=running" \
+    --query 'Reservations[0].Instances[0].PrivateIpAddress' --output text)
+  echo "connecting to $ip"
+  ssh -t $ip concon ${@:3}
+}

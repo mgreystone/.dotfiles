@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/mgreystone/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -98,7 +98,6 @@ export EDITOR='nvim'
 
 eval `gdircolors ~/.config/dircolors-solarized/dircolors.ansi-dark`
 
-alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias egrep='egrep --colour=auto'
 alias fgrep='frep --colour=auto'
 alias grep='grep --colour=auto'

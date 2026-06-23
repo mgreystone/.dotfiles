@@ -1,0 +1,10 @@
+eval $(dircolors ~/.config/dircolors-solarized/dircolors.ansi-dark)
+
+alias l='ls -lah --color=auto'
+alias la='ls -lAh --color=auto'
+alias ll='ls -lh --color=auto'
+alias ls='ls --color=auto'
+alias lsa='ls -lah --color=auto'
+
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
