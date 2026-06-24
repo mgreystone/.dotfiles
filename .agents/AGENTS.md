@@ -17,7 +17,17 @@ Before implementing:
 - If a simpler approach exists, say so. Push back when warranted.
 - If something is unclear, stop. Name what's confusing. Ask.
 
-## 2. Simplicity First
+## 2. Comments
+
+**No comments by default. When used, only the why — never the what.**
+
+- Do not comment code. Well-named identifiers are self-documenting.
+- The only valid comment explains a non-obvious constraint, a subtle invariant, a workaround for a specific external bug, or behavior that would surprise a reader.
+- If removing the comment wouldn't confuse a future reader, don't write it.
+- One line maximum. No multi-line blocks. No docstrings.
+- Never describe what the code does. Never reference the current task, PR, or caller.
+
+## 4. Simplicity First
 
 **Minimum code that solves the problem. Nothing speculative.**
 
@@ -30,7 +40,7 @@ Before implementing:
 Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes,
 simplify.
 
-## 3. Surgical Changes
+## 5. Surgical Changes
 
 **Touch only what you must. Clean up only your own mess.**
 
@@ -48,7 +58,7 @@ When your changes create orphans:
 
 The test: Every changed line should trace directly to the user's request.
 
-## 4. Goal-Driven Execution
+## 6. Goal-Driven Execution
 
 **Define success criteria. Loop until verified.**
 
@@ -147,6 +157,33 @@ library/API documentation, check official docs or Context7 first when available.
   manager command can do it.
 - If no package manager is declared, inspect lock files; if still ambiguous and
   the choice matters, ask.
+
+## Unattended-Friendly Commands
+
+**Prefer the command form that runs without a human approval prompt.**
+
+Harnesses gate shell commands through allowlists that match each command
+independently. A few forms defeat that matching and fall through to a human
+prompt — which stalls an unattended run. Prefer the form that runs cleanly;
+reserve the prompt-triggering forms for when they are the only way, and say
+briefly why when you use one. This applies primarily to read/inspection
+operations, where a simpler single-purpose alternative almost always exists.
+
+- **Prefer a dedicated tool over a shell command** when one fits (file
+  read/search/edit, structured API access). Tools are matched and audited as a
+  unit; ad-hoc shell is not.
+- **One command, one purpose.** Avoid chaining with `&&`, `||`, `;`, or pipes
+  when separate calls or a single tool work. Allowlists match each segment
+  independently, so one un-allowlisted segment makes the whole chain prompt.
+- **Avoid command substitution** (`$(...)`, backticks, prompt-string
+  expansion) for data you can obtain directly. Substitution is treated as
+  approval-required regardless of the allowlist, so it always prompts.
+- **No inline interpreter scripts** (`node -e`, `python -c`, `bash -c "…"`,
+  heredocs) for what a plain command or tool can do. Opaque script bodies
+  can't be statically judged safe, so they prompt or are blocked.
+
+The test: would this run unattended against a reasonable read-only allowlist?
+If a simpler form would and this one wouldn't, use the simpler form.
 
 ## Safety
 

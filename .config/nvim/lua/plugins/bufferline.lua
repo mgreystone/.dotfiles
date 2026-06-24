@@ -3,6 +3,7 @@ return {
   opts = {
     options = {
       numbers = "buffer_id", -- or "ordinal" if you prefer 1,2,3 order
+      always_show_bufferline = true,
     },
   },
 }

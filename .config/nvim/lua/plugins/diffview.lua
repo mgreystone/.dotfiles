@@ -1,12 +1,23 @@
 return {
-  "sindrets/diffview.nvim",
+  -- "sindrets/diffview.nvim",
+  "dlyongemallo/diffview-plus.nvim",
   opts = {
     default_args = {
-      DiffviewOpen = { "-w" },
+      DiffviewOpen = { "-w", "--imply-local" },
     },
   },
   config = function(_, opts)
     require("diffview").setup(opts)
+
+    local GitAdapter = require("diffview.vcs.adapters.git").GitAdapter
+    local RevType = require("diffview.vcs.rev").RevType
+    local orig_show_untracked = GitAdapter.show_untracked
+    GitAdapter.show_untracked = function(self, opt)
+      if opt and opt.revs and opt.revs.right and opt.revs.right.type == RevType.LOCAL then
+        return orig_show_untracked(self, { dv_opt = opt.dv_opt })
+      end
+      return orig_show_untracked(self, opt)
+    end
 
     local watcher = nil
     local timer = nil
